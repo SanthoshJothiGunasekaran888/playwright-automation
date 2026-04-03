@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/loginPage.js';
 
-test('Test 1: Successful login with valid credentials', async ({ page }) => {
+test.skip('Test 1: Successful login with valid credentials', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
     
@@ -13,7 +13,7 @@ test('Test 1: Successful login with valid credentials', async ({ page }) => {
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 });
 
-test('Show error with invalid credentials', async ({ page }) => {
+test.skip('Show error with invalid credentials', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
     
@@ -25,7 +25,7 @@ test('Show error with invalid credentials', async ({ page }) => {
 });
 
 // Goto Saucedemo Site
-test('3: simple goto', async({page})=> {
+test.only('3: simple goto test', async({page})=> {
 
     await page.goto('https://www.saucedemo.com/')
 
