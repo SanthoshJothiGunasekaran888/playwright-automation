@@ -25,7 +25,7 @@ test('Show error with invalid credentials', async ({ page }) => {
 });
 
 // Goto Saucedemo Site
-test('3: simple goto', async({page})=> {
+test('3: simple goto test', async({page})=> {
 
     await page.goto('https://www.saucedemo.com/')
 
