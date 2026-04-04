@@ -24,7 +24,7 @@ test.skip('Show error with invalid credentials', async ({ page }) => {
     expect(errorMsg).toContain('Username and password do not match');
 });
 
-// Goto Saucedemo Sites
+// Goto Saucedemo Website
 test.only('3: simple goto test', async({page})=> {
 
     await page.goto('https://www.saucedemo.com/')
