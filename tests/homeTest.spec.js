@@ -24,6 +24,8 @@ test('Test case 1: Verify logo appears after login', async ({ page }) => {
     expect(isValidLogo).toBeTruthy();
 });
 
+// adding a testcase to automate adding & removing a product from cart in swag labs page
+
 test('Test case 2: Add a product to cart', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const homePage = new HomePage(page);
