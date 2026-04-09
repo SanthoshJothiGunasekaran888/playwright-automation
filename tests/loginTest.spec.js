@@ -7,7 +7,7 @@ test('Test 1: Successful login with valid credentials', async ({ page }) => {
     await loginPage.goto();
     
     // Valid credentials for SauceDemo
-    await loginPage.login('standard_user', 'secret_sauce');
+    await loginPage.login('problem_user', 'secret_sauce');
     
     // Verify successful login (redirects to inventory page)
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
