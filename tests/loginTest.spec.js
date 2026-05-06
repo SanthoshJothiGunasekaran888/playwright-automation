@@ -37,6 +37,9 @@ test('Test 4: Successful logout', async ({ page }) => {
     const homePage = new HomePage(page);
     await loginPage.goto();
     await loginPage.login('problem_user', 'secret_sauce');
+
+     // Verify successful login (redirects to inventory page)
+    await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
     
     // Click logout button
     await homePage.logout();
