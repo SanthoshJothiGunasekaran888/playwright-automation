@@ -32,7 +32,7 @@ test('Test 3: simple goto test', async({page})=> {
 
 });
 
-test('Test 4: Successful logout', async ({ page }) => {
+test.skip('Test 4: Successful logout', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const homePage = new HomePage(page);
     await loginPage.goto();

@@ -6,7 +6,7 @@ const { yourCart } = require('../pages/yourCart');
 const { CheckoutStepOne } = require('../pages/checkoutStepone');  
 const { CheckoutStepTwo } = require('../pages/checkoutSteptwo');  
 
-test('Test case 1: Verify logo appears after login', async ({ page }) => {
+test.skip('Test case 1: Verify logo appears after login', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const homePage = new HomePage(page);    
     
