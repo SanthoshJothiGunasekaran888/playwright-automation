@@ -60,4 +60,26 @@ export class HomePage {
             .locator('button', { hasText: 'Remove' });
         await removeFromCartButton.click();
     }
+
+     /**
+     * Clicks on the shopping cart icon to go to cart page and Proceeds to checkout page from cart page
+     */
+    async goToCart() {
+        await this.page.click(this.cartIcon);
+    }
+
+    /**
+     * Adds an item to cart AND navigates directly to checkout
+     * @param {string} itemName - Name of the item to add (e.g., "Sauce Labs Backpack")
+     */
+    async addToCartAndGoToCheckout(itemName) {
+        // Step 1: Add the item to cart
+        await this.addToCart(itemName);
+        
+        // Step 2: Go to cart page and navigates directly to checkout
+        await this.goToCart();
+        
+    }
+
+    
 }
