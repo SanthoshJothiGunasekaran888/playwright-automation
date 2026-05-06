@@ -2,7 +2,7 @@ export class HomePage {
     constructor(page) {
         this.page = page;
         this.welcomeMessage = '.app_logo';
-        this.logoutButton = '#logout';
+        this.logoutButton = '#logologout_sidebar_linkut';
         this.menuButton = '#react-burger-menu-btn';
         this.cartIcon = '.shopping_cart_link';
     }
