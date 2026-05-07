@@ -6,14 +6,28 @@ const { yourCart } = require('../pages/yourCart');
 const { CheckoutStepOne } = require('../pages/checkoutStepone');  
 const { CheckoutStepTwo } = require('../pages/checkoutSteptwo');  
 
-test.skip('Test case 1: Verify logo appears after login', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    const homePage = new HomePage(page);    
+
+test.describe('Swag Labs E2E Tests', () => {
     
-    // Login first
-    await loginPage.goto();
-    await loginPage.login('standard_user', 'secret_sauce');
-    
+// Declare variables at describe level (accessible to all tests)
+    let loginPage;
+    let homePage;
+
+    // This runs BEFORE EACH test in this describe block
+    test.beforeEach(async ({ page }) => {
+        loginPage = new LoginPage(page);
+        homePage = new HomePage(page);
+        
+        // Login before each test (common setup)
+        await loginPage.goto();
+        await loginPage.login('standard_user', 'secret_sauce');
+    });
+
+
+
+
+test('Test case 1: Verify logo appears after login', async ({ page }) => {
+
     // Check logo is visible (means logged in)
     const isLoggedIn = await homePage.isLoggedIn();
     expect(isLoggedIn).toBeTruthy();
@@ -29,18 +43,11 @@ test.skip('Test case 1: Verify logo appears after login', async ({ page }) => {
 
 // adding a testcase to automate adding & removing a product from cart in swag labs page
 
-test('Test case 2: Add a product to cart and navigate to checkout page', async ({ page }) => {
+test('Test case 2: Login to Finish', async ({ page }) => {
 
-    const loginPage = new LoginPage(page);
-    const homePage = new HomePage(page);
     const cartPage = new yourCart(page);
     const checkoutSteponePage = new CheckoutStepOne(page);  
     const checkoutSteptwoPage = new CheckoutStepTwo(page);  
-
-
-    // login into swag labs site
-    await loginPage.goto();
-    await loginPage.login('standard_user', 'secret_sauce');
 
     // selecting a cart and navigating to cart page 
     await homePage.addToCartAndGoToCheckout('Sauce Labs Backpack');
@@ -71,4 +78,6 @@ test('Test case 2: Add a product to cart and navigate to checkout page', async (
     await expect(page.locator('.pony_express')).toBeVisible(); // The pony delivery image
     
     
+});
+
 });
