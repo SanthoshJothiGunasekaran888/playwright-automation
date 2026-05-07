@@ -40,16 +40,6 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-  // Smoke Tests Configuration - finds @smoke tags in ANY test file
-        {
-            name: 'Smoke Tests',
-            testDir: './tests',  // Look in all test files
-            testMatch: '**/e2etest.spec.js',  // Match any spec file
-            grep: /@smoke/,  // Only run tests with @smoke tag
-            retries: 0,
-            timeout: 30000,
-        },
-
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -78,6 +68,4 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
-
 
