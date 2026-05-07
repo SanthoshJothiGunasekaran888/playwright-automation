@@ -40,7 +40,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-  // Smoke Tests Configuration - finds @smoke tags in ANY test file
+  // Smoke Tests Configurations - finds @smoke tags in ANY test file
         {
             name: 'Smoke Tests',
             testDir: './tests',  // Look in all test files
