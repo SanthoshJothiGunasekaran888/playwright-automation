@@ -14,7 +14,8 @@ test('Test 1: Successful login with valid credentials', async ({ page }) => {
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 });
 
-test('Test 2: Show error with invalid credentials', async ({ page }) => {
+//added smoke tags
+test('Test 2: Show error with invalid credentials @smoke', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
     
