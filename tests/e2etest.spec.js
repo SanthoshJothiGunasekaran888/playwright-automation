@@ -43,7 +43,7 @@ test('Test case 1: Verify logo appears after login', async ({ page }) => {
 
 // adding a testcase to automate adding & removing a product from cart in swag labs page
 
-test('Test case 2: Login to Finish', async ({ page }) => {
+test('Test case 2: Login to Finish @smoke', async ({ page }) => {
 
     const cartPage = new yourCart(page);
     const checkoutSteponePage = new CheckoutStepOne(page);  
